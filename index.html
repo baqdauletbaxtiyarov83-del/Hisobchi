@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NOVAPAY — Raqamli To'lov va Moliya Platformasi (O'zbekiston)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="sandbox-banner" id="sandboxBanner">
+    SANDBOX REJIM • HAQIQIY PUL O'TKAZILMAYDI (SIMULYATSIYA)
+  </div>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <button type="button" class="brand" data-nav="HOME" aria-label="NOVAPAY Home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M12 2L20 7V17L12 22L4 17V7L12 2Z" />
+            <path d="M12 8V16M8 12H16" />
+          </svg>
+        </span>
+        <span class="brand-name">NOVAPAY</span>
+      </button>
+
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <button type="button" class="nav-pill is-active" data-nav="HOME">HOME</button>
+        <button type="button" class="nav-pill" data-nav="PAYMENTS">PAYMENTS</button>
+        <button type="button" class="nav-pill" data-nav="BUSINESS">BUSINESS</button>
+        <button type="button" class="nav-pill" data-nav="PROFILE">PROFILE</button>
+      </nav>
+
+      <div class="lang-switcher" role="group" aria-label="Language Selector">
+        <button type="button" class="lang-btn is-active" data-lang="uz">UZ</button>
+        <button type="button" class="lang-btn" data-lang="ru">RU</button>
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Mobile Navigation">
+      <button type="button" class="mobile-nav-btn is-active" data-nav="HOME">HOME</button>
+      <button type="button" class="mobile-nav-btn" data-nav="PAYMENTS">PAYMENTS</button>
+      <button type="button" class="mobile-nav-btn" data-nav="BUSINESS">BUSINESS</button>
+      <button type="button" class="mobile-nav-btn" data-nav="PROFILE">PROFILE</button>
+    </nav>
+  </header>
+
+  <main class="container main-content">
+    <section id="section-HOME" class="page-section is-visible">
+      <div class="hero-card glass-card">
+        <div class="hero-glow hero-glow-cyan"></div>
+        <div class="hero-glow hero-glow-indigo"></div>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow-badge" id="heroEyebrow">O'zbekiston raqamli to'lov va moliya ekotizimi</span>
+            <h1 class="hero-title" id="heroTitle">Kelajak moliyaviy boshqaruvi</h1>
+            <p class="hero-subtitle" id="heroSubtitle">
+              Bir zumda mobil va kommunal to'lovlar, QR-hisob-kitoblar hamda savdo analitikasi bitta oynada.
+            </p>
+
+            <div class="metrics-row">
+              <div class="metric-tile">
+                <span class="metric-label" id="balanceLabel">Asosiy hamyon balansi</span>
+                <strong class="metric-value mono-num" id="homeBalanceValue">4 850 000 so'm</strong>
+              </div>
+              <div class="metric-tile">
+                <span class="metric-label" id="incomeLabel">Oylik tushum</span>
+                <strong class="metric-value mono-num positive" id="homeIncomeValue">+12 400 000 so'm</strong>
+              </div>
+              <div class="metric-tile">
+                <span class="metric-label" id="expenseLabel">Oylik xarajat</span>
+                <strong class="metric-value mono-num negative" id="homeExpenseValue">-197 000 so'm</strong>
+              </div>
+            </div>
+
+            <div class="hero-actions">
+              <button type="button" class="btn-primary" id="heroPayCta" data-nav="PAYMENTS" data-preset-cat="MOBILE">
+                To'lovga o'tish
+              </button>
+              <button type="button" class="btn-secondary" id="heroBizCta" data-nav="BUSINESS">
+                Biznes paneli
+              </button>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="orbit-ring orbit-outer"></div>
+            <div class="orbit-ring orbit-inner"></div>
+            <div class="smart-card-3d" id="smartCard3D">
+              <div class="smart-card-shine" id="smartCardShine"></div>
+              <div class="smart-card-top">
+                <div>
+                  <div class="smart-card-brand">NOVAPAY</div>
+                  <div class="smart-card-sub">VIRTUAL CORE • UZS</div>
+                </div>
+                <span class="chip-tag">SANDBOX</span>
+              </div>
+              <div class="smart-card-mid">
+                <div class="smart-card-bal mono-num" id="cardBalanceText">4 850 000 so'm</div>
+                <div class="smart-card-pan mono-num">8600 •••• •••• 4920</div>
+              </div>
+              <div class="smart-card-bottom">
+                <div>
+                  <small>HOLDER</small>
+                  <div id="cardHolderName">Aziza Karimova</div>
+                </div>
+                <div class="mono-num">UZ-FINTECH</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quick-grid">
+        <button type="button" class="quick-tile glass-card" data-nav="PAYMENTS" data-preset-cat="MOBILE">
+          <span class="quick-icon">📱</span>
+          <strong id="qaMobileTitle">Mobil aloqa</strong>
+          <small>Uzmobile • Ucell • Beeline</small>
+        </button>
+        <button type="button" class="quick-tile glass-card" data-nav="PAYMENTS" data-preset-cat="QR">
+          <span class="quick-icon">🔳</span>
+          <strong id="qaQrTitle">QR to'lov</strong>
+          <small>Scan &amp; Merchant QR</small>
+        </button>
+        <button type="button" class="quick-tile glass-card" data-nav="PAYMENTS" data-preset-cat="ELECTRICITY">
+          <span class="quick-icon">⚡</span>
+          <strong id="qaUtilTitle">Kommunal</strong>
+          <small>HET • Gaz • Suv • TV</small>
+        </button>
+        <button type="button" class="quick-tile glass-card" data-nav="BUSINESS">
+          <span class="quick-icon">📊</span>
+          <strong id="qaBizTitle">Biznes paneli</strong>
+          <small>Analytics &amp; QR Terminals</small>
+        </button>
+      </div>
+
+      <div class="home-bottom-grid">
+        <div class="glass-card panel-box">
+          <div class="panel-header">
+            <h2 id="recentActivityTitle">So'nggi operatsiyalar</h2>
+            <button type="button" class="link-btn" data-nav="PAYMENTS">Barchasi →</button>
+          </div>
+          <div id="homeRecentList" class="activity-list"></div>
+        </div>
+
+        <div class="glass-card panel-box">
+          <div class="panel-header">
+            <h2>Smart Recommendations</h2>
+          </div>
+          <div class="rec-stack">
+            <div class="rec-item">
+              <strong>Avtomatik kommunal reja</strong>
+              <p>Elektr, gaz va internet uchun oylik jadval yaratish tartibini bilib oling.</p>
+              <button type="button" class="link-btn" data-ai-prompt="How do I set up recurring monthly utility bills in PAYMENTS?">
+                Ask NOVAPAY AI →
+              </button>
+            </div>
+            <div class="rec-item">
+              <strong>Savdo nuqtasi QR hisobi</strong>
+              <p>Kassa uchun QR havola yarating va kunlik tushumni kuzating.</p>
+              <button type="button" class="link-btn" data-ai-prompt="Explain how QR payment tools work in the BUSINESS section.">
+                Ask NOVAPAY AI →
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section-PAYMENTS" class="page-section">
+      <div class="glass-card panel-box">
+        <div class="category-tabs" id="categoryTabs">
+          <button type="button" class="cat-btn is-active" data-cat="MOBILE">Mobil aloqa</button>
+          <button type="button" class="cat-btn" data-cat="INTERNET">Internet</button>
+          <button type="button" class="cat-btn" data-cat="ELECTRICITY">Elektr</button>
+          <button type="button" class="cat-btn" data-cat="GAS">Gaz</button>
+          <button type="button" class="cat-btn" data-cat="WATER">Suv</button>
+          <button type="button" class="cat-btn" data-cat="TV">Televideniye</button>
+          <button type="button" class="cat-btn" data-cat="QR">QR to'lov</button>
+        </div>
+      </div>
+
+      <div class="payments-top-grid">
+        <form id="paymentForm" class="glass-card panel-box form-stack">
+          <div class="panel-header">
+            <h2 id="paymentFormHeading">MOBILE — Sandbox Checkout</h2>
+            <span class="chip-tag warn">SIMULATION ONLY</span>
+          </div>
+
+          <div class="two-col">
+            <div class="field-group">
+              <label for="providerSelect">Provayder / Xizmat</label>
+              <select id="providerSelect" class="input-control"></select>
+            </div>
+            <div class="field-group">
+              <label for="accountRefInput" id="accountRefLabel">Telefon raqami (+998...)</label>
+              <input id="accountRefInput" type="text" class="input-control mono-num" value="998901234567" required />
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="amountInput">Summa (UZS)</label>
+            <input id="amountInput" type="number" class="input-control mono-num" min="1000" step="1000" value="50000" required />
+            <div class="preset-chips">
+              <button type="button" class="preset-btn" data-amount="20000">20 000</button>
+              <button type="button" class="preset-btn" data-amount="50000">50 000</button>
+              <button type="button" class="preset-btn" data-amount="100000">100 000</button>
+              <button type="button" class="preset-btn" data-amount="250000">250 000</button>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary full-width" id="submitPaymentBtn">
+            Sandbox to'lovni yaratish
+          </button>
+        </form>
+
+        <div class="payments-side-col">
+          <div class="glass-card panel-box qr-box">
+            <div class="qr-matrix" id="qrMatrix" aria-hidden="true"></div>
+            <div>
+              <span class="eyebrow-badge">QR PAYMENT INTERFACE</span>
+              <h3 id="qrProviderLabel">Uzmobile</h3>
+              <p class="mono-num muted-text" id="qrRefLabel">Ref: 998901234567</p>
+              <p class="muted-text small-note">Dinamik sandbox QR ma'lumoti tayyor.</p>
+            </div>
+          </div>
+
+          <div id="receiptCard" class="glass-card panel-box receipt-card hidden">
+            <div class="receipt-badge">✓ Digital Sandbox Receipt</div>
+            <div class="mono-num" id="receiptCodeText"></div>
+            <div id="receiptMetaText" class="muted-text"></div>
+            <strong class="mono-num" id="receiptAmountText"></strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="glass-card panel-box form-stack">
+          <h3>Saved Payments</h3>
+          <div id="savedPayeesList" class="stack-list"></div>
+          <form id="savedPayeeForm" class="inline-form">
+            <input id="savedPayeeLabelInput" type="text" class="input-control" placeholder="Nomi (masalan: Uy interneti)" required />
+            <button type="submit" class="btn-secondary">Saqlash</button>
+          </form>
+        </div>
+
+        <div class="glass-card panel-box form-stack">
+          <h3>Recurring Payment Settings</h3>
+          <div id="recurringRulesList" class="stack-list"></div>
+          <form id="recurringForm" class="inline-form">
+            <input id="recurringTitleInput" type="text" class="input-control" placeholder="Reja nomi" required />
+            <select id="recurringDaySelect" class="input-control compact-select">
+              <option value="1">Day 1</option>
+              <option value="5" selected>Day 5</option>
+              <option value="10">Day 10</option>
+              <option value="15">Day 15</option>
+              <option value="20">Day 20</option>
+              <option value="25">Day 25</option>
+            </select>
+            <button type="submit" class="btn-secondary">Qo'shish</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="glass-card panel-box form-stack">
+        <div class="panel-header">
+          <h3>Payment History &amp; Transaction Status</h3>
+          <div class="filter-controls">
+            <input id="txSearchInput" type="search" class="input-control search-control" placeholder="Qidirish (kod, provayder, hisob)..." />
+            <select id="txStatusFilter" class="input-control compact-select">
+              <option value="ALL">ALL</option>
+              <option value="SANDBOX_COMPLETED">SANDBOX_COMPLETED</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Receipt</th>
+                <th>Provider</th>
+                <th>Account</th>
+                <th>Status</th>
+                <th class="text-right">Amount</th>
+              </tr>
+            </thead>
+            <tbody id="paymentsHistoryBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="section-BUSINESS" class="page-section">
+      <div class="glass-card panel-box biz-header">
+        <div>
+          <h2 id="bizNameText">NovaCommerce Toshkent LLC</h2>
+          <p class="mono-num muted-text" id="bizMetaText">INN: 309841256 • Terminal: NVP-TERM-8841</p>
+        </div>
+        <div class="biz-actions">
+          <button type="button" class="status-toggle is-online" id="terminalToggleBtn">● Terminal Online</button>
+          <button type="button" class="btn-secondary" id="exportBizCsvBtn">Export Financial Report (CSV)</button>
+        </div>
+      </div>
+
+      <div id="bizExportNotice" class="notice-banner hidden"></div>
+
+      <div class="metrics-row">
+        <div class="glass-card metric-tile">
+          <span class="metric-label">Daily Sales</span>
+          <strong class="metric-value mono-num" id="bizDailySales">18 420 000 so'm</strong>
+        </div>
+        <div class="glass-card metric-tile">
+          <span class="metric-label">Monthly Revenue</span>
+          <strong class="metric-value mono-num positive" id="bizMonthSales">412 950 000 so'm</strong>
+        </div>
+        <div class="glass-card metric-tile">
+          <span class="metric-label">Active QR Endpoints</span>
+          <strong class="metric-value mono-num" id="bizActiveQr">14 QR</strong>
+        </div>
+      </div>
+
+      <div class="payments-top-grid">
+        <div class="glass-card panel-box form-stack">
+          <div class="panel-header">
+            <h3>Sales &amp; Revenue Analytics (7 Days)</h3>
+            <span class="mono-num muted-text">UZS</span>
+          </div>
+          <div class="bar-chart" id="bizBarChart"></div>
+        </div>
+
+        <div class="glass-card panel-box form-stack">
+          <h3>QR Payment Tools</h3>
+          <label for="bizQrAmountInput" class="muted-text">QR Invoice Amount (UZS)</label>
+          <input id="bizQrAmountInput" type="number" class="input-control mono-num" min="1000" step="1000" value="125000" />
+          <div class="qr-payload-box mono-num" id="bizQrPayload"></div>
+        </div>
+      </div>
+
+      <div class="glass-card panel-box form-stack">
+        <h3>Customer Management</h3>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Customer</th>
+                <th>Segment</th>
+                <th>Visits</th>
+                <th class="text-right">Volume</th>
+              </tr>
+            </thead>
+            <tbody id="bizCustomersBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="section-PROFILE" class="page-section">
+      <div class="payments-top-grid">
+        <form id="authForm" class="glass-card panel-box form-stack">
+          <div class="panel-header">
+            <h2 id="authTitle">Account Sign In</h2>
+            <div class="segmented-tabs">
+              <button type="button" class="seg-btn is-active" id="modeLoginBtn">Login</button>
+              <button type="button" class="seg-btn" id="modeRegisterBtn">Register</button>
+            </div>
+          </div>
+
+          <div id="registerExtraFields" class="form-stack hidden">
+            <div class="field-group">
+              <label for="regNameInput">Full Name</label>
+              <input id="regNameInput" type="text" class="input-control" value="Aziza Karimova" />
+            </div>
+            <div class="field-group">
+              <label for="regPhoneInput">Phone Number</label>
+              <input id="regPhoneInput" type="text" class="input-control" value="+998 90 123 45 67" />
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="authEmailInput">Email</label>
+            <input id="authEmailInput" type="email" class="input-control" value="aziza@novapay.uz" required />
+          </div>
+
+          <div class="field-group">
+            <label for="authPassInput">Password</label>
+            <input id="authPassInput" type="password" class="input-control" placeholder="••••••••" required />
+          </div>
+
+          <button type="submit" class="btn-primary full-width" id="authSubmitBtn">Sign In</button>
+          <div id="authStatusMsg" class="notice-banner hidden"></div>
+        </form>
+
+        <div class="form-stack">
+          <form id="personalInfoForm" class="glass-card panel-box form-stack">
+            <h3>Personal Information &amp; Account Settings</h3>
+            <div class="three-col">
+              <input id="profNameInput" type="text" class="input-control" value="Aziza Karimova" required />
+              <input id="profPhoneInput" type="text" class="input-control" value="+998 90 123 45 67" required />
+              <input id="profRegionInput" type="text" class="input-control" value="Toshkent shahri" required />
+            </div>
+            <button type="submit" class="btn-secondary">Save Personal Details</button>
+          </form>
+
+          <div class="two-col">
+            <div class="glass-card panel-box form-stack">
+              <h3>Security &amp; Notifications</h3>
+              <label class="switch-row">
+                <span>Two-Factor Verification (2FA)</span>
+                <input type="checkbox" id="sec2faCheck" checked />
+              </label>
+              <label class="switch-row">
+                <span>Biometric Passkey Lock</span>
+                <input type="checkbox" id="secBioCheck" checked />
+              </label>
+              <label class="switch-row">
+                <span>Payment &amp; Receipt Alerts</span>
+                <input type="checkbox" id="notifAlertsCheck" checked />
+              </label>
+            </div>
+
+            <div class="glass-card panel-box form-stack">
+              <h3>Language &amp; AI Preferences</h3>
+              <div class="preset-chips">
+                <button type="button" class="preset-btn" data-lang="uz">UZ</button>
+                <button type="button" class="preset-btn" data-lang="ru">RU</button>
+                <button type="button" class="preset-btn" data-lang="en">EN</button>
+              </div>
+              <div class="preset-chips">
+                <button type="button" class="preset-btn is-selected" data-ai-tone="concise">Concise AI</button>
+                <button type="button" class="preset-btn" data-ai-tone="detailed">Detailed AI</button>
+              </div>
+              <p class="muted-text small-note">Help &amp; Support: support@novapay.uz</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="ai-widget">
+    <div id="aiDrawer" class="glass-card ai-drawer hidden" role="dialog" aria-label="NOVAPAY AI Assistant">
+      <div class="ai-header">
+        <div>
+          <strong id="aiDrawerTitle">NOVAPAY AI Yordamchi</strong>
+          <div class="mono-num ai-sub">UZ • RU • EN</div>
+        </div>
+        <div class="ai-header-actions">
+          <button type="button" class="icon-btn" id="aiExpandBtn" title="Expand">⤢</button>
+          <button type="button" class="icon-btn" id="aiCloseBtn" title="Close">✕</button>
+        </div>
+      </div>
+      <div id="aiMessages" class="ai-messages"></div>
+      <form id="aiForm" class="ai-input-row">
+        <input id="aiInput" type="text" class="input-control" placeholder="To'lovlar, QR yoki bo'limlar haqida so'rang..." required />
+        <button type="submit" class="btn-primary" id="aiSendBtn">Yuborish</button>
+      </form>
+    </div>
+
+    <button type="button" class="ai-fab" id="aiToggleBtn">
+      <span>✦</span>
+      <span id="aiFabLabel">NOVAPAY AI</span>
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
